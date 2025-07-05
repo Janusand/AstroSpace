@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASTROSPACE - Cosmic Events Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background Stars -->
+    <div class="stars-container">
+        <div class="stars"></div>
+        <div class="stars2"></div>
+        <div class="stars3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="nav-icon">🚀</span>
+                <h1>ASTROSPACE</h1>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active" data-section="home">
+                    <span class="nav-icon">⭐</span>
+                    <span>Home</span>
+                </a>
+                <a href="#events" class="nav-link" data-section="events">
+                    <span class="nav-icon">🚀</span>
+                    <span>Cosmic Events</span>
+                </a>
+                <a href="#calendar" class="nav-link" data-section="calendar">
+                    <span class="nav-icon">📅</span>
+                    <span>Calendar</span>
+                </a>
+                <a href="#chatbot" class="nav-link" data-section="chatbot">
+                    <span class="nav-icon">💬</span>
+                    <span>Chatbot</span>
+                </a>
+                <a href="#quiz" class="nav-link" data-section="quiz">
+                    <span class="nav-icon">🧠</span>
+                    <span>Quiz</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">ASTROSPACE</h1>
+                    <p class="hero-subtitle">
+                        Explore the infinite cosmos and discover the mysteries of space through cosmic events, 
+                        astronomical calendars, and interactive learning experiences.
+                    </p>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🚀</div>
+                            <h3>Cosmic Events</h3>
+                            <p>Discover past and present astronomical phenomena</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🌍</div>
+                            <h3>Space Calendar</h3>
+                            <p>Track upcoming astronomical events and dates</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">⚡</div>
+                            <h3>Interactive Learning</h3>
+                            <p>Test your knowledge with space quizzes and AI chatbot</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="showSection('events')">Start Exploring</button>
+                        <button class="btn btn-secondary">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cosmic Events Section -->
+        <section id="events" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Cosmic Events</h2>
+                    <p>Journey through time and space to explore the most fascinating astronomical events</p>
+                </div>
+
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="recent">Recent</button>
+                    <button class="filter-btn" data-filter="historical">Historical</button>
+                </div>
+
+                <div class="events-grid" id="eventsGrid">
+                    <!-- Events will be populated by JavaScript -->
+                </div>
+
+                <div class="quiz-button-container">
+                    <button class="btn btn-primary" onclick="showSection('quiz')">
+                        Test Your Knowledge with Space Quiz
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendar Section -->
+        <section id="calendar" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Astronomical Calendar</h2>
+                    <p>Track celestial events, moon phases, and astronomical phenomena</p>
+                </div>
+
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button class="calendar-nav" id="prevMonth">‹</button>
+                        <h3 id="currentMonth">December 2024</h3>
+                        <button class="calendar-nav" id="nextMonth">›</button>
+                    </div>
+
+                    <div class="calendar-weekdays">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+
+                    <div class="calendar-grid" id="calendarGrid">
+                        <!-- Calendar days will be populated by JavaScript -->
+                    </div>
+
+                    <div class="calendar-legend">
+                        <div class="legend-item">
+                            <span class="legend-icon moon">🌙</span>
+                            <span>Moon Phases</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-icon sun">☀️</span>
+                            <span>Solar Events</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-icon meteor">☄️</span>
+                            <span>Meteor Showers</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-icon planet">🪐</span>
+                            <span>Planetary Events</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chatbot Section -->
+        <section id="chatbot" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>AstroBot Assistant</h2>
+                    <p>Chat with our AI-powered space assistant about cosmic mysteries and astronomical phenomena</p>
+                </div>
+
+                <div class="chatbot-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message bot-message">
+                            <div class="message-avatar">🤖</div>
+                            <div class="message-content">
+                                <p>Hello, space explorer! I'm AstroBot, your cosmic companion. What astronomical wonders would you like to explore today?</p>
+                                <span class="message-time">Now</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-input-container">
+                        <input type="text" id="chatInput" placeholder="Ask me about space, planets, stars, or cosmic events..." />
+                        <button id="sendMessage" class="send-btn">🚀</button>
+                    </div>
+
+                    <div class="suggested-questions">
+                        <button class="suggestion-btn" onclick="sendSuggestion('Tell me an interesting space fact')">
+                            🚀 Tell me an interesting space fact
+                        </button>
+                        <button class="suggestion-btn" onclick="sendSuggestion('What\'s special about black holes?')">
+                            🕳️ What's special about black holes?
+                        </button>
+                        <button class="suggestion-btn" onclick="sendSuggestion('How big is our solar system?')">
+                            🌌 How big is our solar system?
+                        </button>
+                        <button class="suggestion-btn" onclick="sendSuggestion('What do you know about galaxies?')">
+                            🌠 What do you know about galaxies?
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Space Knowledge Quiz</h2>
+                    <p>Test your knowledge about the cosmos and astronomical events</p>
+                </div>
+
+                <div class="quiz-container" id="quizContainer">
+                    <!-- Quiz content will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
